@@ -1,0 +1,16 @@
+<main class="container my-3 px-5">
+    <h1 class="text-primary my-3">Pokédex v0.0.1</h1>
+
+    <div class="row">
+        @for (pokemon of pokemons; track pokemon.nome) {
+            <div class="col-md-4">
+                <div class="card text-center">
+                    <h5 class="card-title">{{ pokemon.nome }}</h5>
+
+                    <img [src]="pokemon.urlSprite" [alt]="pokemon.nome">
+                </div>
+            </div>
+        }
+    </div>
+
+</main>
