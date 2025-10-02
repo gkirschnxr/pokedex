@@ -1,23 +1,23 @@
 // Layout:
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, signal } from '@angular/core';
-
-// isso é como o record no c#
-interface Pokemon {
-  nome: string;
-  urlSprite?: string;
-}
+import { Pokemon } from './models/pokemon';
+import { NgClass } from '@angular/common';
+import { coresPorTipoMap } from './util/cores-por-tipo-map';
 
 // Decorator: equivalente do TS para os atributos
 // tipo o [ApiController]
 @Component({
   selector: 'app-root',
-  imports: [],
+  imports: [NgClass],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
+
 export class App implements OnInit {  
   public pokemons: Pokemon[] = [];
+  public coresPorTipoMap = coresPorTipoMap;
+
   private readonly url: string = "https://pokeapi.co/api/v2/pokemon/";
   private readonly http = inject(HttpClient);
 
@@ -30,6 +30,8 @@ export class App implements OnInit {
         this.http.get(result.url).subscribe(objDetails => {
           const pokemon = this.mapPokemon(objDetails)
 
+          console.log(pokemon);
+
           this.pokemons.push(pokemon); //push = Add
         })
       }
@@ -39,7 +41,8 @@ export class App implements OnInit {
   private mapPokemon(obj: any): Pokemon{
     return {
        nome: this.convertToTitleCase(obj.name),
-       urlSprite: obj.sprites.front_default
+       urlSprite: obj.sprites.front_default,
+       tipos: obj.types.map((x: any) => this.convertToTitleCase(x.type.name))
     }
   }
 

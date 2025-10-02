@@ -1,2 +1,154 @@
 /* You can add global styles to this file, and also import other style files */
 @use "bootstrap"; // @use para o SCSS, @import para o CSS
+
+.fundo-tipo-normal {
+    background: linear-gradient(to right, #cbcbcb, #e2e2e2);
+    
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-fogo {
+    background: linear-gradient(to right, #ee6464, #bd866c);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-agua {
+    background: linear-gradient(to right, #4a94f5, #6385a6);
+    
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-gelo {
+    background: linear-gradient(to right, #87e6fd, #a7f0ff);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-voador {
+    background: linear-gradient(to right, #9fc5e8, #b9d9f9);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-grama {
+    background: linear-gradient(to right, #285f1c, #7fd96a);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-inseto {
+    background: linear-gradient(to right, #79832c, #adba49);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-veneno {
+    background: linear-gradient(to right, #682e91, #a574cf);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-terra {
+    background: linear-gradient(to right, #a46739, #c5895e);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-pedra {
+    background: linear-gradient(to right, #c0ba97, #d9d3b1);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;    
+}
+
+.fundo-tipo-eletrico {
+    background: linear-gradient(to right, #f7cd44, #ffe370);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;   
+}
+
+.fundo-tipo-lutador {
+    background: linear-gradient(to right, #ee943b, #ffb561);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-psiquico {
+    background: linear-gradient(to right, #fc719d, #ff9ac9);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-fantasma {
+    background: linear-gradient(to right, #7e537e, #9e739e);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-dragao {
+    background: linear-gradient(to right, #6a7af0, #8a9aff);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-sombrio {
+    background: linear-gradient(to right, #736464, #918181);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-fada {
+    background: linear-gradient(to right, #f5a6f5, #ffc4ff);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+.fundo-tipo-aco {
+    background: linear-gradient(to right, #7eadbe, #9ccbdc);
+
+    background-size: 200% 100%;
+
+    animation: animacao-fundo 4s ease-in-out infinite;
+}
+
+@keyframes animacao-fundo {
+    0% { background-position: 0% 50%; }
+
+    50% { background-position: 100% 50%; }
+
+    100% { background-position: 0% 50%; }
+}

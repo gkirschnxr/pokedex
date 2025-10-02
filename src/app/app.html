@@ -1,13 +1,22 @@
-<main class="container my-3 px-5">
+<main class="container my-3">
+
     <h1 class="text-primary my-3">Pokédex v0.0.1</h1>
 
-    <div class="row">
+    <div class="row gap-3">
         @for (pokemon of pokemons; track pokemon.nome) {
-            <div class="col-md-4">
-                <div class="card text-center">
-                    <h5 class="card-title">{{ pokemon.nome }}</h5>
+            <div class="col-md-3">
+                <div class="card text-center m-1 ">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ pokemon.nome }}</h5>
 
-                    <img [src]="pokemon.urlSprite" [alt]="pokemon.nome">
+                        <img [src]="pokemon.urlSprite" [alt]="pokemon.nome">
+
+                        <div class="d-flex justify-content-center gap-3">
+                            @for (tipo of pokemon.tipos; track $index) {
+                                <span class="badge rounded-pill text-light fs-6" [ngClass]="coresPorTipoMap[tipo]">{{tipo}}</span>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         }
