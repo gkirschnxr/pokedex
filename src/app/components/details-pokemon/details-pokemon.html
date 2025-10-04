@@ -1,0 +1,78 @@
+<h2>Detalhes do Pokémon</h2>
+
+<div class="row">
+    <div class="col-auto">
+        <div class="card shadow-sm">
+            <div class="card-body">                 
+                <div class="row justify-content-between">
+                    <div class="col-auto">
+                        <img [src]="detailPokemon?.urlSprite" [alt]="detailPokemon?.nome" class="img-fluid mb-3 w-100 mx-auto d-block">
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col">
+        <div class="d-grid">
+            <h2 class="mb-0">{{ detailPokemon?.nome }}</h2>
+
+            <div class="d-flex align-items-start gap-2 mt-2">
+                @for (tipo of detailPokemon?.tipos; track $index) {
+                    <span class="badge rounded-pill text-light fs-6" [ngClass]="coresPorTipoMap[tipo]">{{tipo}}</span>
+                }
+            </div>
+        </div> <hr>
+
+        <section>
+            <h3 class="fw-normal">Sprites</h3>
+
+            <div class="row g-2 mt-3">
+                @for (sprite of detailPokemon?.sprites; track $index) {
+                    <div class="col-2">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <img class="img-fluid my-auto" style="max-height: 100px;" [src]="sprite">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </section> <hr>
+
+        <section>
+            <h3 class="fw-normal">Sons</h3>
+
+            <div class="table-reponsive mt-4">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Atual</th>
+                            <th>Antigo</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>
+                                <audio controls class="mt-2" style="height: 40px; max-width: 180px;">
+                                    <source [src]="detailPokemon?.sons?.atual" type="audio/ogg">
+                                </audio>
+                            </td>
+
+                            <td>
+                                <audio controls class="mt-2" style="height: 40px; max-width: 180px;">
+                                    <source [src]="detailPokemon?.sons?.antigo" type="audio/ogg">
+                                </audio>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+
+    </div>
+</div>
